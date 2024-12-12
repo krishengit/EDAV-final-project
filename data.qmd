@@ -31,22 +31,9 @@ library(ggplot2)
 library(dplyr)
 library(tidyverse)
 
-#  missing values per column
-missing_value_counts <- colSums(is.na(emissions_data))
-missing_df <- data.frame(Variable = names(missing_value_counts), Missing = missing_value_counts)
-
-# Bar plot 
-ggplot(missing_df, aes(x = reorder(Variable, Missing), y = Missing)) +
-  geom_bar(stat = "identity") +
-  labs(
-    title = "Count of Missing Values by Variable",
-    x = "Year",
-    y = "Number of Missing Values"
-  ) +
-  theme_minimal(base_size = 16) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ```
+
 ```{r,fig.width=11,fig.height=8}
 
 #  missing values per column
