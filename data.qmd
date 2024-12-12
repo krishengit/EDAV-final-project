@@ -23,7 +23,7 @@ which may filtering for specific analysis.
 
 ```{r}
 emissions_data <- read.csv("Datasets/historical_emissions.csv", na = "N/A") # changed to relative path, which allow both of us(or others to load the data in the dataset folder)
-head(emissions_data)
+#head(emissions_data)
 ```
 
 ```{r,fig.width=11,fig.height=8}

@@ -232,12 +232,13 @@ gas_focused <- subset(
 
 
 ggplot(gas_focused, aes(x = Year, y = Emissions, color = Country)) +
-  geom_line(size = 1) +
+  geom_line(linewidth = 1) +
   facet_grid(Sector ~ Gas, scales = "free_y") +
+  scale_y_continuous(trans = 'log10', labels = scales::comma) +  # Log-transform the y-axis
   labs(
     title = "Sectoral Emissions by Gas and Country (1990–2021)",
     x = "Year",
-    y = "Emissions (MtCO₂e)",
+    y = "Emissions (Log Scale)",
     color = "Country"
   ) +
   theme_minimal() +
@@ -246,6 +247,7 @@ ggplot(gas_focused, aes(x = Year, y = Emissions, color = Country)) +
     plot.title = element_text(size = 16, face = "bold"),
     legend.position = "bottom"
   )
+
 
 ```
 China and United States are the primary emitters of CO2 mainly in the Energy and Electricity/ Heat Sectors. Further, The European Union suggests a stable
